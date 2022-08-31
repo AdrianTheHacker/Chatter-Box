@@ -2,18 +2,14 @@ import dotenv
 
 import os
 
-import discord_client
-from tts import create_tts_audio_file, say_message
+from discord_client import bot
 
 
 def main():
-    # environment_variables = dotenv.load_dotenv()
-    # discord_token = os.getenv("DISCORD_TOKEN")
+    environment_variables = dotenv.load_dotenv()
+    discord_token = os.getenv("DISCORD_TOKEN")
 
-    # client.run(discord_token)
-
-    say_message("Hello, world!")
-    create_tts_audio_file("Hello, world!")
+    bot.run(discord_token)
 
 
 if __name__ == "__main__":

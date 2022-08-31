@@ -4,7 +4,7 @@ import constants
 import os
 
 
-engine = pyttsx3.init()
+__engine = pyttsx3.init()
 
 
 def say_message(message):
@@ -14,7 +14,7 @@ def say_message(message):
     This is used for fast debugging when testing
     discord bot's ability to read and speak messages.
     """
-    engine.say(message)
+    __engine.say(message)
 
 
 def __clear_audio():
@@ -36,5 +36,5 @@ def create_tts_audio_file(message):
     """
     __clear_audio()
 
-    engine.save_to_file(message, constants.audio_file_path)
-    engine.runAndWait()
+    __engine.save_to_file(message, constants.audio_file_path)
+    __engine.runAndWait()
