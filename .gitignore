@@ -1,3 +1,4 @@
-/target
+src/__pycache__
+
 .env
-audio_files/*
+/venv
