@@ -1,19 +1,20 @@
-use tts_rust::{ GTTSClient, languages::Languages };
+use delete::{delete_file};
 
-fn create_narrator(volume: f32, language: Languages) -> GTTSClient {
-    // Creates and returns the GTTSClient.
-    // GTTSClient is used for TTS.
+use gtts::save_to_file;
 
-    let narrator: GTTSClient = GTTSClient {
-        volume: volume, 
-        language: language, // use the Languages enum
-    };
 
-    narrator
+fn clear_audio(file_path: &str) {
+    // Deletes Sound.mp3.
+    // Ran before creating an audio file.
+
+    delete_file(file_path).unwrap();
 }
 
-pub fn say(message: &str) {
-    let narrator: GTTSClient = create_narrator(1.0, Languages::English);
+pub fn create_audio(message: &str) {
+    let file_path: &str = r"audio_files\Sound.mp3";
+    clear_audio(&file_path);
 
-    narrator.speak(message);
+    // Creates an audio_files\Sound.mp3.
+    // This mp3 file contains the TTS of the message.
+    save_to_file(message, &file_path);
 }

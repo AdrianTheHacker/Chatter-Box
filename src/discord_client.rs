@@ -33,7 +33,7 @@ impl EventHandler for Handler {
                 println!("Error sending message: {:?}", why);
             }
             
-            tts::say(&msg.content[4..]);
+            tts::create_audio(&msg.content[4..]);
         }
     }
 
