@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use env_file_reader::read_file;
 use tokio;
 
-mod discord_bot;
+mod discord_client;
 
 
 #[tokio::main]
@@ -13,7 +13,7 @@ async fn main() {
     let bot_token: &String = &env_var["DISCORD_TOKEN"];
     
     // Create the client
-    let mut client: serenity::Client = discord_bot::create_client(&bot_token).await;
+    let mut client: serenity::Client = discord_client::create_client(&bot_token).await;
 
     // Start a single shard, and start listening to events.
     //

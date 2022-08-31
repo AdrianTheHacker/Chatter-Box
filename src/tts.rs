@@ -12,7 +12,7 @@ fn create_narrator(volume: f32, language: Languages) -> GTTSClient {
     narrator
 }
 
-pub fn speak(message: &str) {
+pub fn say(message: &str) {
     let narrator: GTTSClient = create_narrator(1.0, Languages::English);
 
     narrator.speak(message);

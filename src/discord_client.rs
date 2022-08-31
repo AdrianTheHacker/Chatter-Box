@@ -3,6 +3,9 @@ use serenity::model::channel::Message;
 use serenity::model::gateway::Ready;
 use serenity::prelude::*;
 
+#[path = "tts.rs"] mod tts;
+
+
 struct Handler;
 
 #[async_trait]
@@ -13,7 +16,8 @@ impl EventHandler for Handler {
     // Event handlers are dispatched through a threadpool, and so multiple
     // events can be dispatched simultaneously.
     async fn message(&self, ctx: Context, msg: Message) {
-        if msg.content == "!ping" {
+
+        if &msg.content[..=4] == "!ping" {
             // Sending a message can fail, due to a network error, an
             // authentication error, or lack of permissions to post in the
             // channel, so log to stdout when some error happens, with a
@@ -22,6 +26,14 @@ impl EventHandler for Handler {
             if let Err(why) = msg.channel_id.say(&ctx.http, "Pong!").await {
                 println!("Error sending message: {:?}", why);
             }
+        }
+
+        if &msg.content[..=4] == "!say " {
+            if let Err(why) = msg.channel_id.say(&ctx.http, "Sure").await {
+                println!("Error sending message: {:?}", why);
+            }
+            
+            tts::say(&msg.content[4..]);
         }
     }
 
