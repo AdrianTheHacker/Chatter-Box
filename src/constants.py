@@ -1,1 +1,2 @@
-audio_file_path = "audio_file\Sounds.mp3"
+AUDIO_FILE_PATH = "audio_file\Sounds.mp3"
+FFMPEG_PATH = "ffmpeg.exe"

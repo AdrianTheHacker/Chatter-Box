@@ -23,10 +23,10 @@ def __clear_audio():
     Used before updating the audio.
     """
     try:
-        os.remove(constants.audio_file_path)
+        os.remove(constants.AUDIO_FILE_PATH)
 
     except FileNotFoundError:
-        print(f"File '{constants.audio_file_path}' doesn't exist.")
+        print(f"File '{constants.AUDIO_FILE_PATH}' doesn't exist.")
 
 
 def create_tts_audio_file(message):
@@ -36,5 +36,5 @@ def create_tts_audio_file(message):
     """
     __clear_audio()
 
-    __engine.save_to_file(message, constants.audio_file_path)
+    __engine.save_to_file(message, constants.AUDIO_FILE_PATH)
     __engine.runAndWait()
