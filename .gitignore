@@ -1,3 +1,7 @@
 src/__pycache__
-
 /venv
+
+ffmpeg/*
+audio_file/*
+
+.env

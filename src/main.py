@@ -7,7 +7,7 @@ from discord_client import bot
 
 def main():
     environment_variables = dotenv.load_dotenv()
-    discord_token = os.getenv("DISCORD_BOT_TOKEN")
+    discord_token = os.getenv("DISCORD_TOKEN")
 
     bot.run(discord_token)
 
