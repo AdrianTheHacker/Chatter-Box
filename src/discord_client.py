@@ -17,7 +17,6 @@ bot = commands.Bot(command_prefix='$', intents=intents)
 @bot.command()
 async def hello_bot(ctx):
     await ctx.send(f"Hello, {ctx.author}")
-    await tts.create_tts_audio_file("Hello, world!")
 
 
 @bot.command()
