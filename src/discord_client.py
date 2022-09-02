@@ -21,7 +21,7 @@ async def hello_bot(ctx):
 
 @bot.command()
 async def join_vc(ctx):
-    voiceChannel = discord.utils.get(ctx.guild.voice_channels, name='General')
+    voiceChannel = discord.utils.get(ctx.guild.voice_channels, name=constants.VOICE_CHANNEL)
     await voiceChannel.connect()
 
 
