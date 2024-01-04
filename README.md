@@ -1,12 +1,9 @@
 # Dr. Jams
 
-Dr. Jams isn't your typical discord bot!
-Using the messages you type, Dr. Jams is able to talk inside of a discord VC.
+Chatter Box isn't your typical discord bot!
+Using the messages you type, Chatter Box is able to talk inside of a discord VC.
 
-In other words, Dr. Jams is a TTS (Text-To-Speech) bot.
-
-Originally this bot was going to be programmed in Rust using Serenity, however, I couldn't find a library that would allow me to use discord VCs.
-<br>Instead I rewrote the bot in Python. 
+In other words, Chatter Box is a TTS (Text-To-Speech) bot.
 
 The current version of the bot is using Discord.py.
 
