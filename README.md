@@ -1,4 +1,4 @@
-# Dr. Jams
+# Chatter Box
 
 Chatter Box isn't your typical discord bot!
 Using the messages you type, Chatter Box is able to talk inside of a discord VC.
